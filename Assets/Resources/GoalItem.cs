@@ -152,13 +152,13 @@ public class GoalItem : MonoBehaviour {
                 //destroy other player
                 if(go.PlayerNumber == 1)
                 {
-                    Player2.transform.position = new Vector3(0, -4, 0);
+                    Player2.transform.position = new Vector3(0, -2, 0);
                     //GameObject.Destroy(Player2);
                     GameObject.Destroy(Player1Particle);
                 }
                 else
                 {
-                    Player1.transform.position = new Vector3(0, -4, 0);
+                    Player1.transform.position = new Vector3(0, -2, 0);
                     //GameObject.Destroy(Player1);
                     GameObject.Destroy(Player2Particle);
                 }
