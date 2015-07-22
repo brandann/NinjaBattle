@@ -4,24 +4,30 @@ using System.Collections.Generic;
 
 public class GoalItem : MonoBehaviour {
 
+    [Header("Players")]
+    public GameObject Player1;
+    public GameObject Player2;
+
+    [Header("Audio")]
     public AudioSource hit;
     public AudioClip hitSound;
-    public GameObject Player1;
-    public GameObject Player1Particle;
-    public GameObject Player2;
-    public GameObject Player2Particle;
 
-    public GameObject Platforms;
-
-    private List<Vector3> Locations;
-
+    [Header("HeatOptions")]
     public bool small;
     public bool randomLocations;
+    public bool SlowDownActive;
 
+    #region Private Members
     private float minDistance;
+    private Global global;
+    private bool heartisactive = true;
+    private List<Vector3> Locations;
+    #endregion
 
-	// Use this for initialization
+    // Use this for initialization
 	void Start () {
+
+        global = GameObject.Find("Global").GetComponent<Global>();
 
         minDistance = (small) ? 4 : 10;
 
@@ -54,11 +60,31 @@ public class GoalItem : MonoBehaviour {
             Locations.Add(new Vector3(0f, 6.5f, 0f));
         }
         Initilize();
+
+        this.gameObject.SetActive(false);
 	}
 	
 	// Update is called once per frame
+    public float ProximtiyRadius;
 	void Update () {
-	
+
+        if (SlowDownActive)
+        {
+            var PlayerPosition1 = Player1.transform.position;
+            var PlayerPosition2 = Player2.transform.position;
+            var HeartPosition = this.transform.position;
+            var Magnitude1 = (PlayerPosition1 - HeartPosition).magnitude;
+            var Magnitude2 = (PlayerPosition2 - HeartPosition).magnitude;
+            var Magnitude = (Magnitude1 <= Magnitude2) ? Magnitude1 : Magnitude2;
+            var Distance = Magnitude / ProximtiyRadius;
+            Distance = Mathf.Clamp(Distance, 0.3f, ProximtiyRadius);
+            Time.timeScale = Distance / ProximtiyRadius;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        
 	}
 
     public void Initilize()
@@ -132,46 +158,35 @@ public class GoalItem : MonoBehaviour {
         return Distances;
     }
 
-    private bool heartisactive = true;
-    public GameObject Cage;
     void OnCollisionEnter2D(Collision2D coll)
     {
         if(!heartisactive)
         {
             return;
         }
+
         if (coll.gameObject.tag == "Player")
         {
-            hit.PlayOneShot(hitSound);
             var go = coll.gameObject.transform.parent.GetComponent<Player>();
-            if(go.GainHeart())
+            if(go.IsForeground())
             {
-                //destroy platforms
-                GameObject.Destroy(Platforms);
-                Cage.SetActive(true);
-                //destroy other player
-                if(go.PlayerNumber == 1)
+                hit.PlayOneShot(hitSound);
+
+                if (go.GainHeart())
                 {
-                    Player2.transform.position = new Vector3(0, -2, 0);
-                    //GameObject.Destroy(Player2);
-                    GameObject.Destroy(Player1Particle);
+                    global.CurrentGameState = Global.GameState.End;
+                    return;
                 }
-                else
-                {
-                    Player1.transform.position = new Vector3(0, -2, 0);
-                    //GameObject.Destroy(Player1);
-                    GameObject.Destroy(Player2Particle);
-                }
-                //destroy heart
-                //GameObject.Destroy(this.gameObject);
-                //var heartgo = this.gameObject.GetComponent<CircleCollider2D>();
-                //heartgo.enabled = false;
-                heartisactive = false;
-                this.transform.position = new Vector3(0, 14, 0);
-                return;
+                Move();
             }
-            Move();
+            
         }
+    }
+
+    public void SetColliderActive(bool b)
+    {
+        heartisactive = b;
+        SlowDownActive = b;
     }
 
     private sealed class Distance

@@ -3084,12 +3084,25 @@ public class PlatformerMotor2D : MonoBehaviour
     #endregion
 
     #region BRANDAN
+    private const int BACKGROUND_LAYER_MASK = 6144;
+    private const int FOREGROUND_LAYER_MASK = 5120;
+    private const int FOREGROUND_MOVING_PLATFORM_MASK = 256;
+    private const int BACKGROUND_MOVING_PLATFORM_MASK = 0;
+    private bool Foreground = true;
     public void ToggleLayerMask()
     {
-        LayerMask lms = LayerMask.NameToLayer("StaticEnviroment") + LayerMask.NameToLayer("WALLPLATFORMS");
-        LayerMask lmb = LayerMask.NameToLayer("BackgroundPlatform") + LayerMask.NameToLayer("WALLPLATFORMS");
-
-        staticEnvLayerMask = (staticEnvLayerMask == lms)? staticEnvLayerMask = lmb : staticEnvLayerMask = lms;
+        if(Foreground)
+        {
+            staticEnvLayerMask = BACKGROUND_LAYER_MASK;
+            movingPlatformLayerMask = BACKGROUND_MOVING_PLATFORM_MASK;
+            Foreground = false;
+        }
+        else
+        {
+            staticEnvLayerMask = FOREGROUND_LAYER_MASK;
+            movingPlatformLayerMask = FOREGROUND_MOVING_PLATFORM_MASK;
+            Foreground = true;
+        }
     }
     #endregion
 }

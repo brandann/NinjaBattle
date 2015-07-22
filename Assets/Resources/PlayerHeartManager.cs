@@ -17,6 +17,11 @@ public class PlayerHeartManager : MonoBehaviour {
 	
 	}
 
+    public int GetScore()
+    {
+        return index - 1;
+    }
+
     public bool GainHeart()
     {
         if(index < Hearts.Count)

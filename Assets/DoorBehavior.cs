@@ -15,15 +15,29 @@ public class DoorBehavior : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        //Debug.LogWarning("Player Hit Door");
         if (coll.gameObject.tag == "Player")
         {
-            Debug.LogWarning("Player Hit Door");
-            var go = coll.gameObject.transform.parent.GetComponent<Player>();
-            if (go.GainHeart())
+            coll.gameObject.GetComponent<PlatformerMotor2D>().ToggleLayerMask();
+            bool foreground = coll.gameObject.GetComponentInParent<Player>().IsForeground();
+            if(foreground)
             {
-                go.GetComponent<PlatformerMotor2D>().ToggleLayerMask();
+                coll.gameObject.GetComponent<TrailRenderer>().enabled = false;
+                var renderer = coll.gameObject.GetComponentInChildren<SpriteRenderer>();
+                var orgcolor = renderer.color;
+                var newcolor = new Color(orgcolor.r, orgcolor.g, orgcolor.b, .6f);
+                renderer.color = newcolor;
+                renderer.sortingOrder = 9;
             }
+            else
+            {
+                coll.gameObject.GetComponent<TrailRenderer>().enabled = true;
+                var renderer = coll.gameObject.GetComponentInChildren<SpriteRenderer>();
+                var orgcolor = renderer.color;
+                var newcolor = new Color(orgcolor.r, orgcolor.g, orgcolor.b, 1);
+                renderer.color = newcolor;
+                renderer.sortingOrder = 11;
+            }
+            coll.gameObject.GetComponentInParent<Player>().SetForeground(!foreground);
         }
     }
 }
