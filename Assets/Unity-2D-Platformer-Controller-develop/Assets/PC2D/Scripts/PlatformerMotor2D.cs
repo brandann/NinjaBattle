@@ -12,6 +12,9 @@ public class PlatformerMotor2D : MonoBehaviour
     /// </summary>
     public LayerMask staticEnvLayerMask;
 
+    public LayerMask FRONTEnvLayerMask;
+    public LayerMask BACKGROUNDEnvLayerMask;
+
     /// <summary>
     /// How far out the motor will check for the environment mask. This value can be tweaked if jump checks are not firing when 
     /// wanted.
@@ -3078,5 +3081,15 @@ public class PlatformerMotor2D : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region BRANDAN
+    public void ToggleLayerMask()
+    {
+        LayerMask lms = LayerMask.NameToLayer("StaticEnviroment") + LayerMask.NameToLayer("WALLPLATFORMS");
+        LayerMask lmb = LayerMask.NameToLayer("BackgroundPlatform") + LayerMask.NameToLayer("WALLPLATFORMS");
+
+        staticEnvLayerMask = (staticEnvLayerMask == lms)? staticEnvLayerMask = lmb : staticEnvLayerMask = lms;
+    }
     #endregion
 }
