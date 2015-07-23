@@ -21,19 +21,30 @@ public class GoalItem : MonoBehaviour {
     private float minDistance;
     private Global global;
     private bool heartisactive = true;
+    private bool foreground = false;
     private List<Vector3> Locations;
+    private Vector3 initialLocation;
     #endregion
 
     // Use this for initialization
 	void Start () {
 
         global = GameObject.Find("Global").GetComponent<Global>();
-
+        goals = new List<GoalLocations>();
         minDistance = (small) ? 4 : 10;
 
         Locations = new List<Vector3>();
 
-        if(small)
+        //FillLocations(small);
+        
+        //Initilize();
+
+        this.gameObject.SetActive(false);
+	}
+
+    private void FillLocations(bool sm)
+    {
+        if (small)
         {
             Locations.Add(new Vector3(0f, .25f, 0f));
             Locations.Add(new Vector3(-4f, 2.25f, 0f));
@@ -54,15 +65,12 @@ public class GoalItem : MonoBehaviour {
             Locations.Add(new Vector3(-13.75f, 6.5f, 0f));
             Locations.Add(new Vector3(13.75f, 6.5f, 0f));
 
-            Locations.Add(new Vector3(-8.5f,9.5f, 0f));
+            Locations.Add(new Vector3(-8.5f, 9.5f, 0f));
             Locations.Add(new Vector3(8.5f, 9.5f, 0f));
 
             Locations.Add(new Vector3(0f, 6.5f, 0f));
         }
-        Initilize();
-
-        this.gameObject.SetActive(false);
-	}
+    }
 	
 	// Update is called once per frame
     public float ProximtiyRadius;
@@ -89,8 +97,17 @@ public class GoalItem : MonoBehaviour {
 
     public void Initilize()
     {
-        this.transform.position = Locations[0];
-        this.gameObject.SetActive(true);
+        //this.transform.position = Locations[0];
+        for(int i = 0; i < goals.Count; i++)
+        {
+            if(goals[i].initial)
+            {
+                this.transform.position = goals[i].position;
+                this.gameObject.SetActive(true);
+                return;
+            }
+        }
+        //this.gameObject.SetActive(true);
     }
 
     public void Move()
@@ -120,16 +137,25 @@ public class GoalItem : MonoBehaviour {
 
     private void MoveRandom()
     {
+        if (initialLocation != Vector3.zero)
+        {
+            this.transform.position = initialLocation;
+            initialLocation = Vector3.zero;
+            return;
+        }
+
         float delta1 = 0;
         float delta2 = 0;
         while (true)
         {
-            var position = Locations[Random.Range(0, Locations.Count)];
+            int index = Random.Range(0, goals.Count);
+            var position = goals[index].position;
             delta1 = (position - Player1.transform.position).magnitude;
             delta2 = (position - Player2.transform.position).magnitude;
             if (delta1 >= minDistance && delta2 >= minDistance)
             {
                 this.transform.position = position;
+                goals.RemoveAt(index);
                 return;
             }
         }
@@ -168,7 +194,7 @@ public class GoalItem : MonoBehaviour {
         if (coll.gameObject.tag == "Player")
         {
             var go = coll.gameObject.transform.parent.GetComponent<Player>();
-            if(go.IsForeground())
+            if(go.IsForeground() == foreground)
             {
                 hit.PlayOneShot(hitSound);
 
@@ -187,6 +213,24 @@ public class GoalItem : MonoBehaviour {
     {
         heartisactive = b;
         SlowDownActive = b;
+    }
+
+    List<GoalLocations> goals;
+    public void SetSpawnLocations(Vector3 position, bool fore, bool first)
+    {
+        GoalLocations gl = new GoalLocations();
+        gl.position = position;
+        gl.foreground = fore;
+        gl.initial = first;
+
+        goals.Add(gl);
+    }
+
+    private sealed class GoalLocations
+    {
+        public Vector3 position;
+        public bool foreground = false;
+        public bool initial = false;
     }
 
     private sealed class Distance

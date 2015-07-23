@@ -55,6 +55,7 @@ public class Global : MonoBehaviour {
                     GoalItemObject.SetActive(false);
                     Player1Particle.SetActive(false);
                     Player2Particle.SetActive(false);
+                    
                     break;
                 case (GameState.Game):
 
@@ -63,7 +64,7 @@ public class Global : MonoBehaviour {
                     GoalItemObject.SetActive(true);
                     Player1Particle.SetActive(true);
                     Player2Particle.SetActive(true);
-
+                    GoalItemObject.GetComponent<GoalItem>().Initilize();
                     break;
                 case (GameState.End):
                     

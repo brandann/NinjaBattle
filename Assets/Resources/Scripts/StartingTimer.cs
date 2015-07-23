@@ -15,6 +15,11 @@ public class StartingTimer : MonoBehaviour {
 	void Update () {
 	    if(Time.timeSinceLevelLoad - starttime >= 5)
         {
+            //global.CurrentGameState = Global.GameState.Game;
+        }
+
+        if(Input.GetAxis("Start") == 1)
+        {
             global.CurrentGameState = Global.GameState.Game;
         }
 	}
