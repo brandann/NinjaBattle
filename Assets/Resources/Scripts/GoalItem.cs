@@ -86,7 +86,8 @@ public class GoalItem : MonoBehaviour {
             var Magnitude = (Magnitude1 <= Magnitude2) ? Magnitude1 : Magnitude2;
             var Distance = Magnitude / ProximtiyRadius;
             Distance = Mathf.Clamp(Distance, 0.3f, ProximtiyRadius);
-            Time.timeScale = Distance / ProximtiyRadius;
+            //Time.timeScale = Distance / ProximtiyRadius;
+            Player1.GetComponent<PlatformerMotor2D>().timeScale = Distance / ProximtiyRadius;
         }
         else
         {

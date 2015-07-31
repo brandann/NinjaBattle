@@ -1871,7 +1871,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11425650, guid: afcf322fbe631b94f9565218c6f76116, type: 2}
       propertyPath: SlowDownActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afcf322fbe631b94f9565218c6f76116, type: 2}
