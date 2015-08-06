@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 419150}
   - 50: {fileID: 5072836}
   - 58: {fileID: 5892422}
-  - 114: {fileID: 11445278}
+  - 114: {fileID: 11433338}
   m_Layer: 0
   m_Name: SawBlade
   m_TagString: Untagged
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 8.19999981, y: 0, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 455694}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationDirection: 1
   RotationSpeed: 200
---- !u!114 &11445278
+--- !u!114 &11433338
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 153416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ec5c507ce159ce4facfe141f8917ead, type: 3}
+  m_Script: {fileID: 11500000, guid: 65abeed6d21eeca4b9a910b773aa7c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11466242
