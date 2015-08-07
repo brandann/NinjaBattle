@@ -13,6 +13,6 @@ public class FanRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.Rotate(new Vector3(0, 0, -1 * RotationDirection * RotationSpeed * Time.deltaTime));
+        this.transform.Rotate(new Vector3(0, 0, -1 * RotationDirection * RotationSpeed * Time.deltaTime * Time.timeScale));
 	}
 }
