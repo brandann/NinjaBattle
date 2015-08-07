@@ -407,7 +407,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -522,6 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameObjectToFollow: {fileID: 556139518}
   Boundry: {fileID: 515635972}
+  CameraSize: 8
 --- !u!1 &515635972 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 116874, guid: 53d8d287557bd15408a004f61765b0c5, type: 2}
@@ -1604,6 +1605,10 @@ Prefab:
     - target: {fileID: 419150, guid: 59fc15d87a4d127428c62aa43db9c825, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11466242, guid: 59fc15d87a4d127428c62aa43db9c825, type: 2}
+      propertyPath: RotationDirection
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59fc15d87a4d127428c62aa43db9c825, type: 2}

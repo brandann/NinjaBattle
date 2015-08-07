@@ -8,22 +8,25 @@ public class CameraBehavior : MonoBehaviour {
 
     [Header("Level Boundry")]
     public GameObject Boundry;
-
+	
+	public float CameraSize;
+	
     private bool AllowLeftMovement = true;
 
     private float MinX;
     private float MaxX;
     private float MinY;
     private float MaxY;
-    private float CameraHeight = 20;
+	private float _cameraHeight;
     private float CameraRatio = 16 / 9;
 
 	// Use this for initialization
 	void Start () {
-        MinX = (Boundry.transform.position.x - (Boundry.transform.localScale.x / 2)) + ((CameraHeight / 2) * CameraRatio);
-        MaxX = (Boundry.transform.position.x + (Boundry.transform.localScale.x / 2)) - ((CameraHeight / 2) * CameraRatio);
-        MinY = (Boundry.transform.position.y - (Boundry.transform.localScale.y / 2)) + (CameraHeight / 2);
-        MaxY = (Boundry.transform.position.y + (Boundry.transform.localScale.y / 2)) - (CameraHeight/2);
+		_cameraHeight = CameraSize * 2;
+        MinX = (Boundry.transform.position.x - (Boundry.transform.localScale.x / 2)) + ((_cameraHeight / 2) * CameraRatio);
+        MaxX = (Boundry.transform.position.x + (Boundry.transform.localScale.x / 2)) - ((_cameraHeight / 2) * CameraRatio);
+        MinY = (Boundry.transform.position.y - (Boundry.transform.localScale.y / 2)) + (_cameraHeight / 2);
+        MaxY = (Boundry.transform.position.y + (Boundry.transform.localScale.y / 2)) - (_cameraHeight/2);
 	}
 	
 	// Update is called once per frame
