@@ -87,5 +87,6 @@ public class LevelTimeLimit : MonoBehaviour {
     private void OnEndTimer()
     {
         Debug.Log("Level ran out of time!");
+        StopTimer();
     }
 }

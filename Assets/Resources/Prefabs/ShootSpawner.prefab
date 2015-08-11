@@ -26,7 +26,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 445264}
   - 212: {fileID: 21251094}
-  - 114: {fileID: 11411984}
   m_Layer: 0
   m_Name: ShootSpawner (1)
   m_TagString: Untagged
@@ -41,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.3999996, y: 13.6000004, z: 0}
+  m_LocalPosition: {x: -.319999993, y: -3.9000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 445264}
@@ -53,25 +52,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.449999988, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalPosition: {x: .449999988, y: 0, z: 0}
   m_LocalScale: {x: 1, y: .100000001, z: 1}
   m_Children: []
   m_Father: {fileID: 407056}
   m_RootOrder: 0
---- !u!114 &11411984
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec772205795d442f91a968a38891e8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileObject: {fileID: 0}
-  Frequency: 0
 --- !u!114 &11426972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,8 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec772205795d442f91a968a38891e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileObject: {fileID: 0}
-  Frequency: 0
+  projectileObject: {fileID: 121084, guid: 5548fd3658b8c784cb258c84be454734, type: 2}
+  Frequency: 1
 --- !u!212 &21251094
 SpriteRenderer:
   m_ObjectHideFlags: 1

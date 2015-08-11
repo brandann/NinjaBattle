@@ -23,8 +23,8 @@ public class CameraBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_cameraHeight = CameraSize * 2;
-        MinX = (Boundry.transform.position.x - (Boundry.transform.localScale.x / 2)) + ((_cameraHeight / 2) * CameraRatio);
-        MaxX = (Boundry.transform.position.x + (Boundry.transform.localScale.x / 2)) - ((_cameraHeight / 2) * CameraRatio);
+        MinX = (Boundry.transform.position.x - (Boundry.transform.localScale.x / 2)) + ((_cameraHeight / 2) * CameraRatio) + 5.925926f;
+        MaxX = (Boundry.transform.position.x + (Boundry.transform.localScale.x / 2)) - ((_cameraHeight / 2) * CameraRatio) - 5.925926f;
         MinY = (Boundry.transform.position.y - (Boundry.transform.localScale.y / 2)) + (_cameraHeight / 2);
         MaxY = (Boundry.transform.position.y + (Boundry.transform.localScale.y / 2)) - (_cameraHeight/2);
 	}
@@ -44,6 +44,5 @@ public class CameraBehavior : MonoBehaviour {
         {
             MinX = this.transform.position.x;
         }
-
     }
 }

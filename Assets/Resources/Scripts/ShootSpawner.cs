@@ -19,7 +19,8 @@ public class ShootSpawner : MonoBehaviour {
 		{
 			var go = Instantiate(projectileObject);
 			go.transform.position = this.transform.position;
-			go.transform.up = this.transform.up;
+            go.transform.rotation = this.transform.rotation;
+			//go.transform.up = this.transform.up;
 			starttime = Time.timeSinceLevelLoad;
 		}
 	}
