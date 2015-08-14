@@ -1928,6 +1928,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53d8d287557bd15408a004f61765b0c5, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &710517666 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 160688, guid: a5c797471b93b004ea051105a02fb921, type: 2}
+  m_PrefabInternal: {fileID: 1553675101}
+--- !u!114 &710517674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 710517666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a15a857a3076347a0de58d49dda7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hearts: {fileID: 0}
+  PlayerNumber: 1
 --- !u!4 &712894973 stripped
 Transform:
   m_PrefabParentObject: {fileID: 437778, guid: 53d8d287557bd15408a004f61765b0c5, type: 2}
@@ -3923,6 +3940,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4538698, guid: a5c797471b93b004ea051105a02fb921, type: 2}
+    - {fileID: 11467330, guid: a5c797471b93b004ea051105a02fb921, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a5c797471b93b004ea051105a02fb921, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1559709045
