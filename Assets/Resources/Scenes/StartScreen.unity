@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameSceneToLoad: 2
-  TransitionTime: 3
+  TransitionTime: .25
 --- !u!1 &812423800
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +560,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: '-- Credits --
 
-    Development: Brandan Haertel (foilpudding@gmail.com)
+    Development: Brandan Haertel, Gary Mixson
+
+    Design: Jason Lantz
 
 
     -- Public Domain Assets --
