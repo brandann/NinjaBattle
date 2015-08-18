@@ -9,6 +9,7 @@ TagManager:
   - BackgroundPlatform
   - sawblade
   - projectile
+  - Chekpoint
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - BackgroundPlatform
   - WALLPLATFORMS
   - SawBlade
-  - 
+  - enemy
   - 
   - 
   - 
