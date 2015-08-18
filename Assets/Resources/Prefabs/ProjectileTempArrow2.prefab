@@ -13,6 +13,7 @@ GameObject:
   - 50: {fileID: 5024408}
   - 61: {fileID: 6175006}
   - 114: {fileID: 11440166}
+  - 96: {fileID: 9655694}
   m_Layer: 0
   m_Name: ProjectileTempArrow2
   m_TagString: projectile
@@ -42,7 +43,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -61,6 +62,51 @@ BoxCollider2D:
   m_Offset: {x: .460000008, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: .159999996}
+--- !u!96 &9655694
+TrailRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121084}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: .400000006
+  m_StartWidth: .0500000007
+  m_EndWidth: .0500000007
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4278232469
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4278232469
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4278232469
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4278232469
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 42389
+  m_MinVertexDistance: .100000001
+  m_Autodestruct: 0
 --- !u!114 &11440166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30edacef02f8945a487b967574e5e1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 50
 --- !u!212 &21276128
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -119,11 +165,59 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: speed
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 180268, guid: fd526792beade134584ba19b73894db4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 0}
+      propertyPath: m_StartWidth
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_EndWidth
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Time
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_Color[0].rgba
+      value: 4278232469
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_Color[1].rgba
+      value: 4278232469
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_Color[2].rgba
+      value: 4278232469
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_Color[3].rgba
+      value: 4278232469
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Colors.m_Color[4].rgba
+      value: 42389
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

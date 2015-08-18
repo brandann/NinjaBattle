@@ -1,43 +1,42 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &170324
+--- !u!1 &119856
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 488468}
-  - 212: {fileID: 21272640}
-  - 61: {fileID: 6141756}
-  - 50: {fileID: 5086636}
-  - 114: {fileID: 11412934}
-  m_Layer: 0
-  m_Name: Lava
-  m_TagString: Untagged
+  - 4: {fileID: 488148}
+  - 212: {fileID: 21275250}
+  - 60: {fileID: 6007772}
+  - 50: {fileID: 5009870}
+  m_Layer: 12
+  m_Name: Platform2
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &488468
+--- !u!4 &488148
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170324}
+  m_GameObject: {fileID: 119856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35, y: -15, z: 0}
-  m_LocalScale: {x: 30, y: 8, z: 1}
+  m_LocalPosition: {x: -69.0699997, y: -15.5, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5086636
+--- !u!50 &5009870
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170324}
+  m_GameObject: {fileID: 119856}
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
@@ -47,36 +46,45 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!61 &6141756
-BoxCollider2D:
+--- !u!60 &6007772
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170324}
+  m_GameObject: {fileID: 119856}
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!114 &11412934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65abeed6d21eeca4b9a910b773aa7c6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &21272640
+  m_Points:
+    m_Paths:
+    - - {x: .984545887, y: .991152585}
+      - {x: .827134728, y: .885223389}
+      - {x: .685520947, y: .813834965}
+      - {x: .532788098, y: .750321388}
+      - {x: .353681952, y: .70179671}
+      - {x: .169660956, y: .67183727}
+      - {x: .0110198976, y: .660214841}
+      - {x: -.158318326, y: .663512826}
+      - {x: -.274224848, y: .682187855}
+      - {x: -.461039752, y: .726416767}
+      - {x: -.641452014, y: .7914505}
+      - {x: -.841709912, y: .89425087}
+      - {x: -.981175244, y: 1.00707781}
+      - {x: -1.30242312, y: .996778309}
+      - {x: -2.30600739, y: .00740566244}
+      - {x: -2.30464029, y: .00573921204}
+      - {x: -2.30408645, y: -.00322685251}
+      - {x: 1.81694555, y: 0}
+      - {x: 2.29853606, y: -.00370845804}
+      - {x: 1.31116641, y: .98871845}
+--- !u!212 &21275250
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 170324}
+  m_GameObject: {fileID: 119856}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,7 +92,7 @@ SpriteRenderer:
   - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
+  m_UseLightProbes: 1
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
@@ -94,9 +102,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: bfbf0e870364bf34ba103f956c376cb6, type: 3}
-  m_Color: {r: 1, g: .24999997, b: 0, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d9245413971d3104ab87a661cc5b2639, type: 3}
+  m_Color: {r: .596078455, g: .890196145, b: .31764707, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -106,5 +114,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 170324}
+  m_RootGameObject: {fileID: 119856}
   m_IsPrefabParent: 1

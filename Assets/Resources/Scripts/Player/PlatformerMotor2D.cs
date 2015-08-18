@@ -608,7 +608,7 @@ public class PlatformerMotor2D : MonoBehaviour
         _jumping.pressed = true;
         _jumping.timeToldFrames = GetFrameCount(jumpWindowWhenActivated);
         _jumping.height = jumpHeight;
-
+        
         // Consider jumping held in case there are multiple fixed ticks before the next update tick.
         // This is useful as jumpingHeld may not be set to true with a GetButton() call.
         _jumping.held = true;
@@ -623,6 +623,7 @@ public class PlatformerMotor2D : MonoBehaviour
         Jump();
         _jumping.height = customHeight;
     }
+
 
     /// <summary>
     /// This will force a jump to occur even if the motor doesn't think a jump is valid. This function will not work if the motor
