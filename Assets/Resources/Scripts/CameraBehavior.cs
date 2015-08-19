@@ -19,12 +19,14 @@ public class CameraBehavior : MonoBehaviour {
     private float MaxY;
 	private float _cameraHeight;
     private float CameraRatio = 16 / 9;
+    private float offset;
 
 	// Use this for initialization
 	void Start () {
 		_cameraHeight = CameraSize * 2;
-        MinX = (Boundry.transform.position.x - (Boundry.transform.localScale.x / 2)) + ((_cameraHeight / 2) * CameraRatio) + 5.925926f;
-        MaxX = (Boundry.transform.position.x + (Boundry.transform.localScale.x / 2)) - ((_cameraHeight / 2) * CameraRatio) - 5.925926f;
+        offset = (CameraRatio * _cameraHeight) / 6f;
+        MinX = (Boundry.transform.position.x - (Boundry.transform.localScale.x / 2)) + ((_cameraHeight / 2) * CameraRatio) + offset; //5.925926f
+        MaxX = (Boundry.transform.position.x + (Boundry.transform.localScale.x / 2)) - ((_cameraHeight / 2) * CameraRatio) - offset; //5.925926f
         MinY = (Boundry.transform.position.y - (Boundry.transform.localScale.y / 2)) + (_cameraHeight / 2);
         MaxY = (Boundry.transform.position.y + (Boundry.transform.localScale.y / 2)) - (_cameraHeight/2);
 	}
@@ -36,7 +38,7 @@ public class CameraBehavior : MonoBehaviour {
 
     void LateUpdate()
     {
-        float X = Mathf.Clamp(GameObjectToFollow.transform.position.x + 5.925926f, MinX, MaxX);
+        float X = Mathf.Clamp(GameObjectToFollow.transform.position.x + offset, MinX, MaxX);
         float Y = Mathf.Clamp(GameObjectToFollow.transform.position.y, MinY, MaxY);
         this.transform.position = new Vector3(X, Y, -10);
 

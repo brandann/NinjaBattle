@@ -25,7 +25,7 @@ public class ProjectileBehavior : MonoBehaviour {
 		{
 			if(Time.timeSinceLevelLoad - killstart >= killwait)
 			{
-				GameObject.Destroy(this.gameObject);
+                GameObject.Destroy(this.gameObject);
 			}
 		}
 	}
