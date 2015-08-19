@@ -9,6 +9,7 @@ using System.Collections;
 
 public class Level : MonoBehaviour {
 
+    /*
     protected Player player;
     protected Spawn
 
@@ -24,6 +25,6 @@ public class Level : MonoBehaviour {
 	void Update () {
 	
 	}
-
+    */
 
 }

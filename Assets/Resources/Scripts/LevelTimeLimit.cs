@@ -16,7 +16,7 @@ public class LevelTimeLimit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        MaxTime = 10;
+        MaxTime = 100;
         ResetTimer();
         StartTimer();
 	}
