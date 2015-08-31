@@ -9468,7 +9468,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1001 &1553675101
 Prefab:
   m_ObjectHideFlags: 0
@@ -9578,15 +9578,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11417698, guid: a5c797471b93b004ea051105a02fb921, type: 2}
       propertyPath: jumpHeight
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11417698, guid: a5c797471b93b004ea051105a02fb921, type: 2}
       propertyPath: extraJumpHeight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11417698, guid: a5c797471b93b004ea051105a02fb921, type: 2}
       propertyPath: numOfAirJumps
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11417698, guid: a5c797471b93b004ea051105a02fb921, type: 2}
       propertyPath: groundSpeed
@@ -9615,6 +9615,14 @@ Prefab:
     - target: {fileID: 436124, guid: a5c797471b93b004ea051105a02fb921, type: 2}
       propertyPath: m_LocalScale.z
       value: .75
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417698, guid: a5c797471b93b004ea051105a02fb921, type: 2}
+      propertyPath: enableWallJumps
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417698, guid: a5c797471b93b004ea051105a02fb921, type: 2}
+      propertyPath: enableWallSlides
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4538698, guid: a5c797471b93b004ea051105a02fb921, type: 2}
